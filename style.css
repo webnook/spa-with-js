@@ -9,7 +9,14 @@
   text-decoration: none;
 }
 :root {
+  --primary-color: #6d28d9;
+  --secondary-color: #ede9fe;
+  --main-white: #fff;
   --main-black: #222;
+  --main-grey: #7c7c7c;
+  --main-spacing: 0.1rem;
+  --main-transition: all 0.3s ease-out;
+  --main-red: #db2777;
   --body-color: #f6f6f6;
   --nav-width: 250px;
 }
@@ -24,4 +31,27 @@ body {
 .nav {
   height: 100vh;
   width: var(--nav-width);
+  background-color: var(--main-white);
+  padding: 0.5rem;
+  position: sticky;
+  top: 0;
+  right: 0;
+}
+.nav li {
+  margin: 5px 0;
+}
+.nav__link {
+  color: var(--main-grey);
+  display: block;
+  padding: 12px 8px;
+}
+.nav__link:hover {
+  background-color: #eef2f8;
+  color: #2c4982;
+  border-radius: 1.5rem;
+  transition: var(--main-transition);
+}
+#app {
+  height: 200vh;
+  padding: 1rem;
 }
