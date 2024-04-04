@@ -1,16 +1,20 @@
+import Dashboard from "./pages/Dashboard.js";
+import Products from "./pages/Products.js";
+import Blog from "./pages/Blog.js";
+import NotFound from "./pages/NotFound.js";
 function router() {
   const routes = [
     {
       path: "/",
-      view: () => console.log("dashboard Page"),
+      view: Dashboard,
     },
     {
       path: "/products",
-      view: () => console.log("products Page"),
+      view: Products,
     },
     {
       path: "/blog",
-      view: () => console.log("blog Page"),
+      view: Blog,
     },
   ];
   const potentialRoutes = routes.map((item) => {
@@ -24,12 +28,12 @@ function router() {
     match = {
       route: {
         path: "/not-found",
-        view: () => console.log("not-found Page"),
+        view: NotFound,
       },
       isMatched: true,
     };
   }
-  console.log(match.route.view());
+  document.querySelector("#app").innerHTML = match.route.view();
 }
 function navigateTo(url) {
   history.pushState(null, null, url);
