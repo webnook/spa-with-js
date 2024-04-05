@@ -40,6 +40,7 @@ body {
   background: linear-gradient(180deg, #324467, #283142);
   display: flex;
   flex-direction: column;
+  transition: var(--main-transition);
 }
 .nav__items {
   flex-grow: 1;
@@ -86,9 +87,13 @@ body {
   color: #efefef;
   padding-top: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .icon-container {
   font-size: 1.2rem;
+  cursor: pointer;
 }
 #app {
   height: 200vh;
@@ -96,7 +101,7 @@ body {
   flex-grow: 1;
 }
 .mini-sidebar.nav {
-  width: 70px;
+  /* width: 70px;  handle root with javascript*/
   overflow-x: hidden;
 }
 .mini-sidebar.nav .nav__link:hover {
@@ -105,4 +110,14 @@ body {
 }
 .nav.mini-sidebar .nav__logo {
   font-size: 1.4rem;
+}
+.nav.mini-sidebar .app-version__label {
+  display: none;
+}
+.sidebar-toggler {
+  transition: var(--main-transition);
+}
+.nav.mini-sidebar .sidebar-toggler {
+  transform: rotate(180deg);
+  margin-right: 10px;
 }
